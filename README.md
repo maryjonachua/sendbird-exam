@@ -8,7 +8,7 @@ This project demonstrates user creation and channel when created
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/sendbird-exam.git
+git clone https://github.com/maryjonachua/sendbird-exam.git
 cd sendbird-exam
 npm install
 npm run dev
@@ -16,6 +16,8 @@ npm run dev
 ```
 
 Open http://localhost:3000/
+
+--
 
 ## .env variables
 
