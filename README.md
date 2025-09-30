@@ -17,8 +17,6 @@ npm run dev
 
 Open http://localhost:3000/
 
---
-
 ## .env variables
 
 ```bash
@@ -34,10 +32,42 @@ NEXT_PUBLIC_PGPORT=""
 NEXT_PUBLIC_PGDATABASE=""
 ```
 
---
-
 ## API routes
 
 - POST /api/users/create → Create and saved a user in Sendbird + Database
 - POST /api/users/update → Save updated nickname/profile in Database
 - POST /api/channels/sync → Sync user’s channels from Sendbird and save to Database
+
+## Database Schema
+
+```bash
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    user_id VARCHAR(255) UNIQUE NOT NULL,
+    nickname VARCHAR(255),
+    profile_url TEXT,
+    deleted BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+);
+
+
+CREATE TABLE channels (
+    id SERIAL PRIMARY KEY,
+    channel_url VARCHAR(255) UNIQUE NOT NULL,
+    created_by VARCHAR(255) NOT NULL,
+    chatmate_id VARCHAR(255),
+    is_deleted BOOLEAN DEFAULT FALSE,
+    message_count INTEGER DEFAULT 0,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+);
+
+```
+
+## Test Data 2
+
+```bash
+NEXT_PUBLIC_USER_ID="user_a9e7510d"
+NEXT_PUBLIC_USER_TOKEN="550cad547fa1546f7bde27e45a12c700f673e949"
+```
