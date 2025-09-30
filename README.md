@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sendbird Exam
 
-## Getting Started
+A **Next.js 15** application integrated with **Sendbird UIKit** and **PostgreSQL**.  
+This project demonstrates user creation and channel when created
 
-First, run the development server:
+## Installation
+
+Clone the repo and install dependencies:
 
 ```bash
+git clone https://github.com/your-username/sendbird-exam.git
+cd sendbird-exam
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000/
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## .env variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+NEXT_PUBLIC_APP_ID="39CA08FB-6F0F-42D1-B796-AF4D0EDB5BF4"
+NEXT_PUBLIC_USER_ID="user_ca3b457f"
+NEXT_PUBLIC_USER_TOKEN="2995fe0987e17904498b74c4e743215daca238e9"
+NEXT_PUBLIC_MASTER_API_TOKEN="321db940380b6b8de3dbb8c65cdb886bffc12960"
 
-## Learn More
+NEXT_PUBLIC_PGHOST=""
+NEXT_PUBLIC_PGUSER=""
+NEXT_PUBLIC_PGPASSWORD=""
+NEXT_PUBLIC_PGPORT=""
+NEXT_PUBLIC_PGDATABASE=""
+```
 
-To learn more about Next.js, take a look at the following resources:
+--
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## API routes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- POST /api/users/create → Create and saved a user in Sendbird + Database
+- POST /api/users/update → Save updated nickname/profile in Database
+- POST /api/channels/sync → Sync user’s channels from Sendbird and save to Database

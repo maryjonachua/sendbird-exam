@@ -9,15 +9,20 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sendbird/chat": "^4.20.0",
+    "@sendbird/uikit-react": "^3.17.2",
+    "next": "15.5.4",
+    "pg": "^8.16.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "sendbird": "^3.1.33",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4"
   }
 }
